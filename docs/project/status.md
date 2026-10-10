@@ -4,7 +4,7 @@ Son yenilənmə: 2026-10-10
 
 ## Harada dayanmışıq
 
-Mühit qurulub və GitHub-dadır (`CRazY4485/environment`, private). Repo iki budağa ayrılıb: `master`-də mühit inkişaf etdirilir, `template` isə yeni layihələrin təmiz başlanğıcıdır və default budaqdır. Repo template kimi işarələnib.
+Mühit qurulub və GitHub-dadır (`CRazY4485/environment`, public). Repo iki budağa ayrılıb: `master`-də mühit inkişaf etdirilir, `template` isə yeni layihələrin təmiz başlanğıcıdır və default budaqdır. Repo template kimi işarələnib.
 
 ## Növbəti addımlar
 
@@ -12,4 +12,4 @@ Mühit qurulub və GitHub-dadır (`CRazY4485/environment`, private). Repo iki bu
 
 ## Açıq suallar
 
-- Repo-nun görünürlüyü (private) və commit müəllifinin e-poçtu (GitHub noreply) istifadəçi tərəfindən təsdiqlənməyib.
+- Repo-nun adı (`environment`) istifadəçi tərəfindən açıq şəkildə təsdiqlənməyib.

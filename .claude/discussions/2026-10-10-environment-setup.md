@@ -55,9 +55,9 @@ Təsdiqlənən bənd dərhal docs/decisions/-ə köçürülür.
 ## GitHub repo-su
 
 - **Fikir (model):** Repo-nun görünürlüyü deyilmədiyi üçün o, private yaradılır (sonradan public etmək olar, əksinə isə məzmun artıq yayılmış olur). Adı qovluğun adı ilə eynidir: `environment`. Commit-lər üçün bu repo-ya aid git müəllifi GitHub hesabının adı və noreply e-poçtu ilə təyin olunur. Şəxsi e-poçt barədə soruşulmuşdu, amma cavab verilmədi.
-- **İstifadəçinin cavabı:** —
-- **Modelin anlaması:** Görünürlük, ad və müəllif e-poçtu istifadəçi tərəfindən təsdiqlənməyib.
-- **Status:** açıq
+- **İstifadəçinin cavabı:** "Reponu public et. Git hesabı isə github CLI-da olmalıdır, bax"
+- **Modelin anlaması:** Repo public olur. Git müəllifi GitHub CLI-da daxil olunmuş hesabdan (`CRazY4485`) götürülür və qlobal təyin edilir ki, şablondan yaradılan layihələrdə də işləsin. Hesabın əsas e-poçtu GitHub-da gizli olduğu üçün hesabın noreply ünvanı istifadə olunur. Repo-nun adı (`environment`) barədə heç nə deyilmədi.
+- **Status:** qismən təsdiqləndi: görünürlük (public) və git hesabı; repo-nun adı açıq qalır
 
 ## Qərarlar ilə CLAUDE.md arasında ziddiyyət
 
