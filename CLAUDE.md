@@ -36,6 +36,8 @@ Aşağıdakı prosedurlar konteksti qorumaq üçündür, özlüyündə məqsəd 
 - Hər müzakirə və ya mərhələ üçün `.claude/templates/decision.md` formatında bir fayl yarat: `docs/decisions/YYYY-MM-DD-<mövzu>.md`. Qərarlar nömrələnmir.
 - Qərarlar yalnız aydınlaşdırma üçün kontekstdir. Kod, sənədlər və digər qərarlar onlara istinad etmir, ona görə hər qərar özü-özlüyündə başa düşülən olmalıdır.
 - Qəbul edilmiş qərarın mətni dəyişdirilmir. Qərar dəyişəndə yeni qərar yazılır və köhnə yanaşma onun rədd edilən alternativləri arasında, səbəbi ilə qeyd olunur. Köhnə qərarda yalnız status dəyişir: `ləğv edildi (YYYY-MM-DD)`.
+- Qərar iş qaydasını dəyişirsə, `CLAUDE.md`-ni eyni addımda, eyni commit-də yenilə ki, ikisi bir-birindən ayrılmasın.
+- Qərar ilə `CLAUDE.md` arasında ziddiyyət görsən, heç birini avtomatik üstün sayma. Fərqi tarixləri ilə birlikdə (qərarın tarixi və `git log`-dan `CLAUDE.md`-nin son dəyişikliyi) istifadəçiyə göstər; hansının qüvvədə olduğunu istifadəçi deyir.
 
 ## Auto memory
 
