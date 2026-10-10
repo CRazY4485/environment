@@ -103,8 +103,29 @@ Tarix: 2026-10-10
 
 ## Mühit yeni layihələr üçün başlanğıc şablonudur
 
-- **Status:** qəbul edildi
+- **Status:** ləğv edildi (2026-10-10)
 - **Kontekst:** Mühit hər yeni layihə üçün yenidən qurulmamalıdır.
 - **Qərar:** Mühitin repo-su yeni layihələr üçün başlanğıc kimi istifadə olunur. Ona görə orada yalnız hər layihəyə aid olan ümumi məzmun saxlanır: CLAUDE.md, şablonlar, skill-lər, boş layihə sənədləri, boş yaddaş və mühitin qərarları (bu fayl). Mühitin qurulduğu sessiyanın müzakirə sənədi və vəziyyət qeydləri şablondan çıxarılıb.
 - **Səbəb:** Hər yeni layihə eyni mühitlə və təmiz kontekstlə başlayır. Mühitin niyə belə qurulduğunu izah edən qərarlar isə onunla birlikdə gəlir.
 - **Nəticələr:** Yeni layihə GitHub-ın "Use this template" funksiyası ilə yaradılanda şablonun git tarixçəsi köçmür. Adi `git clone` ilə isə tarixçə də köçür. Şablonun özü üzərində işləyərkən yazılan auto memory qeydləri bütün yeni layihələrə keçər, ona görə şablonda yaddaş boş saxlanmalıdır.
+
+## Şablon mühitin repo-sunda ayrıca budaqda saxlanır
+
+- **Status:** qəbul edildi
+- **Kontekst:** Mühitin repo-su yeni layihələr üçün başlanğıc kimi istifadə olunur. Mühitin öz iş vəziyyəti (müzakirə sənədləri, vəziyyət, yaddaş) yeni layihənin təmiz başlanğıcından ayrılmalıdır, mühitin repo-su isə olduğu kimi qalmalıdır.
+- **Qərar:** Mühitin repo-sunda iki budaq var. `master`-də mühit inkişaf etdirilir və onun iş vəziyyəti saxlanır. `template` budağı təmiz başlanğıcdır: layihə sənədləri və yaddaş boş skeletlərdir. O, GitHub-da default budaqdır və repo template kimi işarələnib. Yeni layihə "Use this template" ilə yaradılır. Mühit yalnız `master`-də dəyişdirilir. `template`-ə yalnız ümumi fayllar (CLAUDE.md, skill-lər, şablonlar, qərarlar, `.gitignore`, `.worktreeinclude`) `master`-dən fayl yolu ilə köçürülür, merge edilmir. `CLAUDE.md` və qərarlar həmişə birlikdə köçürülür.
+- **Səbəb:** Yeni layihənin təmiz başlaması modelin təlimata əməl etməsindən deyil, quruluşun özündən asılı olur. "Use this template" mühitin git tarixçəsini köçürmür. Mühitin öz iş vəziyyəti toxunulmaz qalır.
+- **Rədd edilən alternativlər:**
+  - Tək budağı həmişə təmiz saxlamaq — mühitin öz müzakirə sənədləri və vəziyyəti üçün yer qalmır.
+  - Layihə başlayanda təmizliyi təlimatla etmək — təmizlik modelin təlimata əməl etməsindən asılı olardı.
+  - Budaqları merge ilə sinxronlaşdırmaq — mühitin vəziyyət faylları şablona keçərdi.
+- **Nəticələr:** Repo-nu klonlayan şəxs `template` budağına düşür; mühit üzərində işləmək üçün `master`-ə keçmək lazımdır. Budaqlar əl ilə sinxronlaşdırılır. `master`-də silinən ümumi faylı `template`-dən də ayrıca silmək lazımdır, çünki fayl yolu ilə köçürmə silinmələri daşımır.
+
+## Qərarlar ilə CLAUDE.md arasındakı ziddiyyət istifadəçiyə bildirilir
+
+- **Status:** qəbul edildi
+- **Kontekst:** Qərarlar və CLAUDE.md eyni iş qaydalarını təsvir edə bilər və bir-birindən ayrıla bilər. Bu, dörd halda baş verir: CLAUDE.md qərar yazılmadan dəyişdirilir; qərar yazılır, amma CLAUDE.md yenilənmir; şablon yenilənərkən fayllardan biri unudulur; yeni layihə şablondan miras qalan qaydanı qərar yazmadan dəyişir.
+- **Qərar:** Qərar iş qaydasını dəyişirsə, CLAUDE.md eyni addımda, eyni commit-də yenilənir. Ziddiyyət görünəndə heç bir mənbə avtomatik üstün sayılmır: fərq tarixləri ilə birlikdə istifadəçiyə göstərilir və hansının qüvvədə olduğunu istifadəçi deyir.
+- **Səbəb:** Ziddiyyətin istiqaməti hər dəfə fərqli olur: bəzən CLAUDE.md daha yenidir, bəzən qərar. Ona görə sabit üstünlük qaydası hallardan birində yanlış nəticə verir.
+- **Rədd edilən alternativlər:**
+  - "Ziddiyyətdə CLAUDE.md qüvvədədir" — qərar yazılıb CLAUDE.md yenilənməyəndə model köhnəlmiş qaydaya əməl edərdi.
