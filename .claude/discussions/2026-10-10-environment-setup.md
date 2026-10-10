@@ -74,3 +74,9 @@ Təsdiqlənən bənd dərhal docs/decisions/-ə köçürülür.
 - **İstifadəçinin cavabı:** "Tövsiyələrini tətbiq et."
 - **Modelin anlaması:** Cavab ziddiyyət qaydası ilə bağlı suala verilib, amma "tövsiyələr" cəm haldadır. Bu, şablon planının da təsdiqi kimi başa düşüldü. Anlama səhvdirsə, istifadəçi düzəldə bilər.
 - **Status:** təsdiqləndi
+
+## Şablon budağının təmizlənməsi
+
+- **Fikir (istifadəçi):** "Template budağı yeni layihələr üçün istifadə ediləcək buna görə də təmizlənməlidir."
+- **Modelin anlaması:** Şablonda mühitə aid tək məzmun qərarlar faylı idi: hamısı mühitin qurulmasına aid 15 qərar, bir hissəsi birbaşa mühitin repo-su haqqında. Fayl şablondan silindi və sinxronizasiya qaydasından çıxarıldı. Yeni layihə boş qərarlar qovluğu ilə başlayır. Budağın git tarixçəsinə toxunulmadı: "Use this template" tarixçəni köçürmür, tarixçəni yenidən yazmaq isə public default budağa force push tələb edərdi.
+- **Status:** təsdiqləndi (istifadəçinin göstərişi); təmizliyin həcmi modelin anlamasıdır

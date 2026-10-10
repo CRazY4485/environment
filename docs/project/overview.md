@@ -5,7 +5,7 @@ Bu repo Claude Code ilə işləmək üçün ümumi iş mühitidir və yeni layih
 ## Budaqlar
 
 - `master` — mühit burada inkişaf etdirilir. Müzakirə sənədləri, vəziyyət və yaddaş mühitin özünə aiddir.
-- `template` — yeni layihələrin başlanğıcıdır və GitHub-da default budaqdır. Layihə sənədləri və yaddaş boş skeletlərdir.
+- `template` — yeni layihələrin başlanğıcıdır və GitHub-da default budaqdır. Mühitin qərarları burada yoxdur; layihə sənədləri və yaddaş boş skeletlərdir.
 
 ## Yeni layihə yaratmaq
 
@@ -23,12 +23,11 @@ Mühit yalnız `master`-də dəyişdirilir. Sonra ümumi fayllar `template`-ə k
 
 ```
 git switch template
-git checkout master -- CLAUDE.md .claude/skills .claude/templates docs/decisions .gitignore .worktreeinclude
+git checkout master -- CLAUDE.md .claude/skills .claude/templates .gitignore .worktreeinclude
 git commit -m "Şablonu master ilə yenilə"
 git push origin template
 git switch master
 ```
 
-- `CLAUDE.md` və `docs/decisions/` həmişə birlikdə köçürülür.
-- `docs/project/`, `.claude/discussions/` və `.claude/memory/` köçürülmür.
+- `docs/decisions/`, `docs/project/`, `.claude/discussions/` və `.claude/memory/` köçürülmür: onlar mühitin özünə aiddir, şablonda isə boş skeletlər var.
 - `master`-də silinmiş ümumi faylı `template`-dən `git rm` ilə ayrıca silmək lazımdır.

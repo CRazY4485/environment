@@ -111,7 +111,7 @@ Tarix: 2026-10-10
 
 ## Şablon mühitin repo-sunda ayrıca budaqda saxlanır
 
-- **Status:** qəbul edildi
+- **Status:** ləğv edildi (2026-10-10)
 - **Kontekst:** Mühitin repo-su yeni layihələr üçün başlanğıc kimi istifadə olunur. Mühitin öz iş vəziyyəti (müzakirə sənədləri, vəziyyət, yaddaş) yeni layihənin təmiz başlanğıcından ayrılmalıdır, mühitin repo-su isə olduğu kimi qalmalıdır.
 - **Qərar:** Mühitin repo-sunda iki budaq var. `master`-də mühit inkişaf etdirilir və onun iş vəziyyəti saxlanır. `template` budağı təmiz başlanğıcdır: layihə sənədləri və yaddaş boş skeletlərdir. O, GitHub-da default budaqdır və repo template kimi işarələnib. Yeni layihə "Use this template" ilə yaradılır. Mühit yalnız `master`-də dəyişdirilir. `template`-ə yalnız ümumi fayllar (CLAUDE.md, skill-lər, şablonlar, qərarlar, `.gitignore`, `.worktreeinclude`) `master`-dən fayl yolu ilə köçürülür, merge edilmir. `CLAUDE.md` və qərarlar həmişə birlikdə köçürülür.
 - **Səbəb:** Yeni layihənin təmiz başlaması modelin təlimata əməl etməsindən deyil, quruluşun özündən asılı olur. "Use this template" mühitin git tarixçəsini köçürmür. Mühitin öz iş vəziyyəti toxunulmaz qalır.
@@ -139,3 +139,16 @@ Tarix: 2026-10-10
 - **Rədd edilən alternativlər:**
   - Hər repo üçün ayrıca lokal müəllif ayarı — yeni layihələrdə təkrar qurulmalı olardı.
   - Hesabın əsas e-poçtu — GitHub-da gizli işarələnib.
+
+## Şablon budağında yalnız yeni layihəyə lazım olanlar saxlanır
+
+- **Status:** qəbul edildi
+- **Kontekst:** Mühitin repo-sunda `master` mühitin inkişafı üçün, `template` isə yeni layihələrin başlanğıcı üçündür. Mühitin qərarları da şablona köçürülürdü. Bu qərarların hamısı mühitin öz qurulmasına aiddir, bir hissəsi isə birbaşa mühitin repo-sunu təsvir edir (görünürlük, budaqlar, ləğv edilmiş qərarlar). Yeni layihədə bunlar səs-küy olardı.
+- **Qərar:** `template` budağında yalnız yeni layihənin işləməsi üçün lazım olan fayllar saxlanır: CLAUDE.md, skill-lər, müzakirə və qərar şablonları, `.gitignore`, `.worktreeinclude`, həmçinin boş layihə sənədləri və boş yaddaş. Mühitin qərarları yalnız `master`-də qalır; yeni layihə boş qərarlar qovluğu ilə başlayır. Mühit yalnız `master`-də dəyişdirilir. Şablona ümumi fayllar `master`-dən fayl yolu ilə köçürülür, merge edilmir. Şablon budağı GitHub-da default budaqdır, repo template kimi işarələnib və yeni layihə "Use this template" ilə yaradılır.
+- **Səbəb:** Yeni layihə başqa layihənin kontekstini daşımamalıdır. CLAUDE.md qaydalarının səbəblərini onsuz da özündə yazır, ona görə mühitin qərarları olmadan da başa düşüləndir. Qərarlar şablona köçürülmədiyi üçün CLAUDE.md ilə qərarlar şablonda bir-birindən ayrıla bilmir.
+- **Rədd edilən alternativlər:**
+  - Mühitin qərarlarını şablona köçürmək — yeni layihə mühitin repo-suna aid qərarları daşıyırdı.
+  - Şablon üçün qərarların ayrıca, ümumiləşdirilmiş versiyasını saxlamaq — iki versiya bir-birindən ayrılar, qəbul edilmiş qərarların mətni isə dəyişdirilmir.
+  - Tək budağı həmişə təmiz saxlamaq — mühitin öz müzakirə sənədləri və vəziyyəti üçün yer qalmır.
+  - Budaqları merge ilə sinxronlaşdırmaq — mühitin vəziyyət faylları və qərarları şablona keçərdi.
+- **Nəticələr:** Repo-nu klonlayan şəxs `template` budağına düşür; mühit üzərində işləmək üçün `master`-ə keçmək lazımdır. `master`-də silinən ümumi faylı `template`-dən də ayrıca silmək lazımdır, çünki fayl yolu ilə köçürmə silinmələri daşımır. "Use this template" git tarixçəsini köçürmür; `template` budağının öz tarixçəsində isə mühitin əvvəlki vəziyyətləri qalır.
