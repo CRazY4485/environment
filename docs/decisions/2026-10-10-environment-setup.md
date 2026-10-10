@@ -129,3 +129,13 @@ Tarix: 2026-10-10
 - **Səbəb:** Ziddiyyətin istiqaməti hər dəfə fərqli olur: bəzən CLAUDE.md daha yenidir, bəzən qərar. Ona görə sabit üstünlük qaydası hallardan birində yanlış nəticə verir.
 - **Rədd edilən alternativlər:**
   - "Ziddiyyətdə CLAUDE.md qüvvədədir" — qərar yazılıb CLAUDE.md yenilənməyəndə model köhnəlmiş qaydaya əməl edərdi.
+
+## Mühitin repo-su public-dir, git müəllifi GitHub CLI hesabından götürülür
+
+- **Status:** qəbul edildi
+- **Kontekst:** Mühitin repo-su əvvəlcə private yaradılmışdı. Commit müəllifi isə yalnız bu repo üçün təyin edilmişdi, ona görə şablondan yaradılan yeni layihələrdə commit alınmayacaqdı.
+- **Qərar:** Mühitin repo-su public-dir. Git müəllifi qlobal olaraq GitHub CLI-da daxil olunmuş hesabdan götürülür: ad hesabın adıdır, e-poçt isə hesabın GitHub noreply ünvanıdır. Autentifikasiya da GitHub CLI vasitəsilə aparılır (`gh auth git-credential`).
+- **Səbəb:** Git hesabı GitHub CLI hesabı ilə eyni olmalıdır. Hesabın əsas e-poçtu GitHub-da gizlidir; o ünvanla edilən commit-lər push zamanı rədd oluna və public tarixçəyə düşə bilərdi.
+- **Rədd edilən alternativlər:**
+  - Hər repo üçün ayrıca lokal müəllif ayarı — yeni layihələrdə təkrar qurulmalı olardı.
+  - Hesabın əsas e-poçtu — GitHub-da gizli işarələnib.
