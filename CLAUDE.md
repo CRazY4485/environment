@@ -42,7 +42,7 @@ Aşağıdakı prosedurlar konteksti qorumaq üçündür, özlüyündə məqsəd 
 - Yaddaş bu repo-nun `.claude/memory/` qovluğundadır. Yönləndirməni `.claude/settings.local.json`-dakı `autoMemoryDirectory` edir. Bu fayl `.worktreeinclude` vasitəsilə worktree-lərə də köçürülür.
 - Sistem promptundakı yaddaş yolu bu qovluq deyilsə (yeni maşın, konteyner, cloud sessiya), `.claude/memory/MEMORY.md`-ni özün oxu. Sonra istifadəçiyə `autoMemoryDirectory`-ni bu mühitdəki mütləq yola təyin etməyi təklif et.
 - Yaddaşda yalnız istifadəçinin üstünlükləri, düzəlişləri və xarici istinadlar saxlanır (`user`, `feedback`, `reference`). Layihə biliyi yuxarıdakı sənədlərə yazılır, yoxsa eyni məlumat iki yerdə yaşayıb bir-birindən ayrılar.
-- `MEMORY.md`-nin ilk sətrində son baxış tarixi yazılıb. O tarixdən 14 gündən çox keçibsə və yaddaş o vaxtdan dəyişibsə, işin təbii fasiləsində `/memory-review` təklif et.
+- `MEMORY.md`-nin ilk sətrində son baxış tarixi yazılır (`—` hələ baxış olmadığını bildirir; onda ilk qeydin tarixindən say). O tarixdən 14 gündən çox keçibsə və yaddaş o vaxtdan dəyişibsə, işin təbii fasiləsində `/memory-review` təklif et.
 
 ## Bu faylı yeniləyərkən
 

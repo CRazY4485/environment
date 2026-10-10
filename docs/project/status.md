@@ -1,10 +1,10 @@
 # Vəziyyət
 
-Son yenilənmə: 2026-10-10
+Son yenilənmə: —
 
 ## Harada dayanmışıq
 
-İş mühiti quruldu: CLAUDE.md, layihə kontekstinin quruluşu (`docs/`), müzakirə və qərar şablonları, repo daxilində auto memory. Mühit GitHub-a push edilib. Layihənin özü hələ müəyyən edilməyib.
+Layihə yeni başlayıb. İş mühiti hazırdır, layihənin özü hələ müəyyən edilməyib.
 
 ## Növbəti addımlar
 
@@ -12,4 +12,4 @@ Son yenilənmə: 2026-10-10
 
 ## Açıq suallar
 
-- GitHub repo-sunun görünürlüyü (private yaradılıb) və commit müəllifinin e-poçtu hələ təsdiqlənməyib.
+- —

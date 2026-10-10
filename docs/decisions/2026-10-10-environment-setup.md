@@ -100,3 +100,11 @@ Tarix: 2026-10-10
   - Quruluşu dəyişmədən saxlamaq — prosedurlar kiçik tapşırıqlarda da hərfi icra olunar, lüzumsuz təsdiq sualları yarana bilərdi.
   - "Bu fayldakılar istiqamətdir, qadağa deyil" ümumi açıqlaması — konkret prosedurları zəiflətmir. Onun yerinə konkret atlama şərti yazıldı.
 - **Nəticələr:** Quruluşun bu formada işlədiyini göstərən birbaşa sübut yoxdur. İlk sessiyalarda üç əlamət izlənməlidir: sənədləşdirmənin işi üstələməsi, lüzumsuz təsdiq sualları və `status.md`-nin köhnəlməsi.
+
+## Mühit yeni layihələr üçün başlanğıc şablonudur
+
+- **Status:** qəbul edildi
+- **Kontekst:** Mühit hər yeni layihə üçün yenidən qurulmamalıdır.
+- **Qərar:** Mühitin repo-su yeni layihələr üçün başlanğıc kimi istifadə olunur. Ona görə orada yalnız hər layihəyə aid olan ümumi məzmun saxlanır: CLAUDE.md, şablonlar, skill-lər, boş layihə sənədləri, boş yaddaş və mühitin qərarları (bu fayl). Mühitin qurulduğu sessiyanın müzakirə sənədi və vəziyyət qeydləri şablondan çıxarılıb.
+- **Səbəb:** Hər yeni layihə eyni mühitlə və təmiz kontekstlə başlayır. Mühitin niyə belə qurulduğunu izah edən qərarlar isə onunla birlikdə gəlir.
+- **Nəticələr:** Yeni layihə GitHub-ın "Use this template" funksiyası ilə yaradılanda şablonun git tarixçəsi köçmür. Adi `git clone` ilə isə tarixçə də köçür. Şablonun özü üzərində işləyərkən yazılan auto memory qeydləri bütün yeni layihələrə keçər, ona görə şablonda yaddaş boş saxlanmalıdır.
